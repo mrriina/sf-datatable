@@ -1,0 +1,18 @@
+<template>
+    <lightning-card>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </template>
+
+        <lightning-button-icon onclick={handleRefresh} style="float: right;" icon-name="utility:rotate"></lightning-button-icon>
+        <div style="padding: 3%;">
+            <lightning-datatable
+                key-field="Id"
+                data={cases}
+                columns={columns}
+                onsave={handleCellChange}
+                hide-checkbox-column
+            ></lightning-datatable>
+        </div>
+    </lightning-card>
+</template>
