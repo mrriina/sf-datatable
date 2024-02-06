@@ -19,7 +19,7 @@ export default class ServiceCaseQueueFiltered extends NavigationMixin(LightningE
 
     columns = [
         {label: 'Case Number', fieldName: 'CaseNumberUrl', type: 'url', typeAttributes: {label: { fieldName: 'CaseNumber' }, target: '_blank'}},
-        { label: 'Assignee', fieldName: 'OwnerId', type: 'text', sortable: true },
+        { label: 'Assignee', fieldName: 'OwnerName__c', type: 'text', sortable: true },
         { label: 'Priority', fieldName: 'Priority', type: 'text', sortable: true },
         { label: 'Origin', fieldName: 'Origin', type: 'text', sortable: true },
 

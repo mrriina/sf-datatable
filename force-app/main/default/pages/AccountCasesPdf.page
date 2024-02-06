@@ -1,0 +1,22 @@
+<apex:page controller="AccountCasesPdfCtrl" renderAs="pdf">
+    <table border="1">
+        <tr>
+            <th>Account Name</th>
+            <th>Account Owner Name</th>
+            <th>Case Number</th>
+            <th>Status</th>
+            <th>Priority</th>
+            <th>Origin</th>
+        </tr>
+        <apex:repeat value="{!cases}" var="case">
+            <tr>
+                <td>{!case.Account.Name}</td>
+                <td>{!case.Account.Owner.Name}</td>
+                <td>{!case.CaseNumber}</td>
+                <td>{!case.Status}</td>
+                <td>{!case.Priority}</td>
+                <td>{!case.Origin}</td>
+            </tr>
+        </apex:repeat>
+    </table>
+</apex:page>
