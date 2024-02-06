@@ -25,7 +25,6 @@ export default class DatatableCaseStatusPicklist extends LightningElement {
 
 
     handleChange(event) {
-        console.log('in (DatatableCaseStatusPicklist)');
         event.preventDefault();
         this.value = event.detail.value;
         this.showPicklist = false;
@@ -34,5 +33,10 @@ export default class DatatableCaseStatusPicklist extends LightningElement {
 
     handleClick(event) {
         this.showPicklist = true;
+    }
+
+    handleBlur(event) {
+        event.preventDefault();
+        this.showPicklist = false;
     }
 }

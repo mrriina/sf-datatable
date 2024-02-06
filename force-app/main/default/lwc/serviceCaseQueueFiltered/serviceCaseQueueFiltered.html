@@ -4,26 +4,18 @@
             <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
         </template>
 
-        <lightning-button-icon onclick={handleRefresh} style="float: right;" icon-name="utility:rotate"></lightning-button-icon>
-        <div style="padding: 3%;">
-            <!-- <lightning-datatable
-                key-field="Id"
-                data={cases}
-                columns={columns}
-                onsave={handleCellChange}
-                hide-checkbox-column
-            ></lightning-datatable> -->
+        <div class="slds-p-around_medium">
+            <lightning-button-icon onclick={handleRefresh} class="slds-float_right" icon-name="utility:rotate"></lightning-button-icon>
+        </div>
+        <div class="slds-p-around_medium slds-m-top_medium">
             <c-custom-data-table class="slds-max-medium-table_stacked" 
-                        onvaluechange={handleValueChange}
-                        data={cases} 
-                        columns={columns} 
-                        show-row-number-column="false"
-                        key-field="Id" 
-                        onsave={handleSave} 
-                        data-record="Id" 
-                        
-                        hide-checkbox-column="true" 
-                        >
+                onvaluechange={handleValueChange}
+                data={cases} 
+                columns={columns} 
+                key-field="Id" 
+                data-record="Id" 
+                show-row-number-column="false"
+                hide-checkbox-column="true">
             </c-custom-data-table>
         </div>
     </lightning-card>
