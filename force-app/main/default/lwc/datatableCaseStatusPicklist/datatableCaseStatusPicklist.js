@@ -11,7 +11,6 @@ export default class DatatableCaseStatusPicklist extends LightningElement {
 
     showPicklist = false;
 
-
     dispatchCustomEvent(eventName, context, value, label, name) {
         this.dispatchEvent(new CustomEvent(eventName, {
             composed: true,
@@ -22,7 +21,6 @@ export default class DatatableCaseStatusPicklist extends LightningElement {
             }
         }));
     }
-
 
     handleChange(event) {
         event.preventDefault();

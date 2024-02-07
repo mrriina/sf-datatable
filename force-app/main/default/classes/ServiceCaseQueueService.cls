@@ -2,17 +2,16 @@ public with sharing class ServiceCaseQueueService {
     
     @AuraEnabled(cacheable=true)
     public static List<Case> getUserCases() {
-
         return [
             SELECT Id, CaseNumber, Status, Priority, CreatedDate, Origin, OwnerId, OwnerName__c
             FROM Case
             WHERE OwnerId IN :getUserQueues() OR OwnerId = :UserInfo.getUserId() 
-            ORDER BY Owner.Name, Priority DESC, CreatedDate DESC
+            ORDER BY Owner.Name, Priority ASC, CreatedDate DESC
             LIMIT 25
         ];
     }
 
-    private static Set<Id> getUserQueues() {
+    public static Set<Id> getUserQueues() {
         Set<Id> queueIds = new Set<Id>();
         for (GroupMember member : [
             SELECT GroupId 
